@@ -85,7 +85,7 @@ In the [EyeTrackingTopology](StreamProcessing/src/main/java/magicalpipelines/top
 
 The [MonitorService](StreamProcessing/src/main/java/magicalpipelines/MonitorService.java) class is responsible for monitoring the fixation and click events using a Javalin web server. The methods `getFixationStats`, `getClickCount`, and `getFixationClickCount` are defined to query and retrieve data from the "fixationStats", "clickCount", and "FixationClickStats" local stores respectively.
 
-The retrieved data is accessible through a Javalin web server with the following routes:
+The retrieved data is accessible through the Javalin web server with the following routes:
 
 - `/fixationMonitor`: Returns the fixation statistics (fixation count, total fixation duration and average fixation duration per AOI) by calling the `getFixationStats` method.
   
