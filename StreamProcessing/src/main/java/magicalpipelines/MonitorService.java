@@ -23,10 +23,9 @@ public class MonitorService {
     private final HostInfo hostInfo;
     private final KafkaStreams streams;
 
-    // Initialize a Logger instance for logging
+    // Logger
     private static final Logger log = LoggerFactory.getLogger(MonitorService.class);
 
-    // Constructor for MonitorService class
     MonitorService(HostInfo hostInfo, KafkaStreams streams) {
         this.hostInfo = hostInfo;
         this.streams = streams;
@@ -35,7 +34,7 @@ public class MonitorService {
 
 
 
-    // Method to start the Javalin web server and configure routes
+    // Start the Javalin web server and configure routes
     void start() {
 
         // Create and start a Javalin server instance with the specified port

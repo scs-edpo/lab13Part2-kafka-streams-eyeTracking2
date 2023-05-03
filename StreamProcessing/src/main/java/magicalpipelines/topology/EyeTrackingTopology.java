@@ -136,8 +136,8 @@ public class EyeTrackingTopology {
                         Grouped.<String, Click>with(Serdes.String(), new ClickSerdes()));
 
 
-        // aggregation: fixation count, average fixation duration, total fixation duration
-        Initializer<FixationStats> fixationStatsInitializer = () -> new FixationStats();
+        // aggregation: fixation count, average fixation duration, total fixation duration per AOI
+        Initializer<FixationStats> fixationStatsInitializer = () -> new FixationStats(0,0,0);
 
         Aggregator<String, TranslatedFixation, FixationStats> fixationStatsAggregator = (key, fixation, fixationStats) -> {
             long newFixationCount = fixationStats.getFixationCount() + 1;

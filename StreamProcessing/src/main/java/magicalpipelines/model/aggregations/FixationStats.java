@@ -17,8 +17,7 @@ public class FixationStats {
         this.averageFixationDuration = averageFixationDuration;
     }
 
-    public FixationStats() {
-    }
+
 
 
     public long getFixationCount() {

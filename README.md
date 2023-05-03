@@ -12,7 +12,7 @@ Only the new concepts are introduced.
 
 1. Open a terminal/command prompt and navigate to the project's root directory.
 2. Run `docker-compose up` to start the Kafka broker, Zookeeper, and the schema registry.
-3. Run the [EventProcessingApp](StreamProcessing/src/main/java/magicalpipelines/EventProcessingApp.java)  to process fixation and click stream data and apply various stateless and stateful event processors
+3. Run the [EventProcessingApp](StreamProcessing/src/main/java/magicalpipelines/EventProcessingApp.java)  to process fixation and click stream data and apply various stateless and stateful event processors. _Use VM option: -DstateDir=/tmp/kafka-streams-ET (See [How to add VM options IntelliJ IDEA?](#VM) in the appendix.)_
 4. Run the [FixationConsumer](FixationConsumer/src/main/java/FixationConsumer.java) to consume the processed fixation data.
 5. run the [FixationProducer](FixationProducer/src/main/java/FixationProducer.java) to start generating fixation data.
 6. run the [ClicksProducer](ClicksProducer/src/main/java/ClicksProducer.java) to start generating click stream data.
@@ -59,7 +59,6 @@ The [ClicksProducer](ClicksProducer/src/main/java/ClicksProducer.java) class is 
 7.**Key Selection and Output Topic**: For each branch, create a new key based on the partitioning condition (i.e., threshold for fixation duration). Then, the fixation data is written to the "fixations-out" Kafka topic using the Avro Serde with Schema Registry. ``CustomPartitionerTranslatedFixation`` ensures that the fixation events are sent into different partitions based on their key (defined in Step 6).
 
 **Stateful Event Processing (Grouping, Aggregation, Joining)**
-
 
 8.**Group Fixations and Clicks by AOI**: Create two separate grouped streams for fixations and clicks, called groupedFixationsByAOI and groupedClicksByAOI, respectively.
 
@@ -111,3 +110,10 @@ The web-server offers also an interactive/self-refreshing GUI at http://localhos
 
 1. Explore the different classes of the project and examine the provided implementation. 
 2. Try to extend the provided implementation such that the event monitor shows similar statistics on the pupil size measure (min, max, average per AOI).
+
+
+<a name="VM"></a>
+## Appendix: How to add VM options IntelliJ IDEA? 
+
+![alt text](https://i.stack.imgur.com/gMWQX.png)
+
