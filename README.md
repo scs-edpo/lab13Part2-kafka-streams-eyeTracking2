@@ -2,7 +2,7 @@
 
 This lab simulates the generation, processing, and consumption of fixation and click stream data.
 The new topology covers both stateless and stateful processing.
-The project consists of four main modules: a **fixation producer**, a **click stream producer**, an **event processing & monitoring**, and a **fixation consumer**. 
+The project consists of four main modules: a **fixation producer**, a **click producer**, an **event processing & monitoring**, and a **fixation consumer**. 
 
 ![alt text](doc/sysOverview.png)
 
