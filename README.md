@@ -2,7 +2,9 @@
 
 This lab simulates the generation, processing, and consumption of fixation and click stream data.
 The new topology covers both stateless and stateful processing.
-The project consists of four main modules: a **fixation producer**, a **click stream producer**, an **event processing topology**, and a **fixation consumer**. 
+The project consists of four main modules: a **fixation producer**, a **click stream producer**, an **event processing topology/monitor**, and a **fixation consumer**. 
+
+![alt text](doc/sysOverview.png)
 
 The lab is based on https://github.com/scs-edpo/lab13Part1-kafka-streams-leaderboard and https://github.com/scs-edpo/lab12Part2-kafka-streams-eyeTracking1.
 
