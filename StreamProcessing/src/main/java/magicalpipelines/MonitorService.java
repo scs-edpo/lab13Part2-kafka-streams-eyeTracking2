@@ -38,15 +38,13 @@ public class MonitorService {
     void start() {
 
         // Create and start a Javalin server instance with the specified port
-        Javalin app = Javalin.create().start(hostInfo.port());
+        Javalin app = Javalin.create(config -> {config.staticFiles.add("/public");}).start(hostInfo.port());
 
         // Define a route for querying in the key-value store
         app.get("/fixationMonitor", this::getFixationStats);
         app.get("/clickMonitor", this::getClickCount);
         app.get("/fixationClickMonitor", this::getFixationClickCount);
 
-        // Make it accessible through a GUI
-        app.config.addStaticFiles("/public");
     }
 
 

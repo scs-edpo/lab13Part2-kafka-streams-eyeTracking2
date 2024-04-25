@@ -19,7 +19,6 @@ class EventProcessingApp {
     Properties config = new Properties();
     config.put(StreamsConfig.APPLICATION_ID_CONFIG, "dev");
     config.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:29092");
-    config.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
     config.put(StreamsConfig.STATE_DIR_CONFIG, stateDir);
 
 
