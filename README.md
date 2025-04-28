@@ -13,7 +13,7 @@ Only the new concepts are introduced.
 ## Running the Project
 
 1. Open a terminal/command prompt and navigate to the project's root directory.
-2. Run `docker-compose up` to start the Kafka broker, Zookeeper, and the schema registry.
+2. Run `docker compose up` to start the Kafka broker, Zookeeper, and the schema registry.
 3. Run the [EventProcessingApp](StreamProcessing/src/main/java/magicalpipelines/EventProcessingApp.java)  to process fixation and click stream data and apply various stateless and stateful event processors. _Use VM option: -DstateDir=/tmp/kafka-streams-ET (See [How to add VM options IntelliJ IDEA?](#VM) in the appendix.)_
 4. Run the [FixationConsumer](FixationConsumer/src/main/java/FixationConsumer.java) to consume the processed fixation data.
 5. run the [FixationProducer](FixationProducer/src/main/java/FixationProducer.java) to start generating fixation data.
